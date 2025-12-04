@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-group = "io.github.lucapatrignani"
+group = "org.danilopianini"
 
 repositories {
     mavenCentral()
@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    testImplementation(kotlin("test"))
+    testImplementation(libs.bundles.kotlin.testing)
 }
 
 dependencyLocking {
