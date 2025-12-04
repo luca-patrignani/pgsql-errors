@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.gitSemVer)
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.qa)
-    alias(libs.plugins.multiJvmTesting)
     alias(libs.plugins.taskTree)
 }
 
@@ -15,7 +14,7 @@ buildscript {
     }
 }
 
-group = "org.danilopianini"
+group = "io.github.lucapatrignani"
 
 repositories {
     mavenCentral()
@@ -23,7 +22,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    testImplementation(libs.bundles.kotlin.testing)
+    testImplementation(kotlin("test"))
 }
 
 dependencyLocking {
