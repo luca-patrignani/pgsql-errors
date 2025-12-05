@@ -1,4 +1,6 @@
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.jlleitschuh.gradle.ktlint.KtlintExtension
 
 plugins {
     alias(libs.plugins.dokka)
@@ -47,4 +49,12 @@ tasks.test {
         )
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
+}
+
+configure<KtlintExtension> {
+    additionalEditorconfig.set(mapOf("max_line_length" to "200"))
+}
+
+configure<DetektExtension> {
+    config.from(project.files("detekt.yml"))
 }
